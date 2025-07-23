@@ -1,0 +1,47 @@
+<!-- <h1>Shop List</h1>
+
+{% if shops %}
+    {% for shop in shops %}
+        <div>
+            <h2>{{ shop.shop_name }}</h2>
+            <p>Number: {{ shop.shop_number }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No shops found.</p>
+{% endif %} -->
+
+
+<h1>Shop List</h1>
+
+{% if shops %}
+    {% for shop in shops %}
+        <div style="border: 1px solid #ccc; padding: 10px; margin-bottom: 10px;">
+            <h2>{{ shop.shop_name }}</h2>
+            <p><strong>Shop Number:</strong> {{ shop.shop_number }}</p>
+            <p><strong>Area (sq.ft):</strong> {{ shop.area_sqft }}</p>
+            <p><strong>Status:</strong> {{ shop.status }}</p>
+            <p><strong>Tenant:</strong> {{ shop.tenant or "Not Assigned" }}</p>
+            <p><strong>Type:</strong> {{ shop.shop_type or "N/A" }}</p>
+        </div>
+    {% endfor %}
+{% else %}
+    <p>No shops found.</p>
+{% endif %}
+
+
+<!-- <h1>Shop List</h1>
+{% if shops %}
+  <ul>
+    {% for shop in shops %}
+      <li>
+        <a href="/shop/{{ shop.name }}">{{ shop.shop_name }}</a> - {{ shop.shop_type }} - ₹{{ shop.rent }}
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p>No shops found.</p>
+{% endif %} -->
+
+
+

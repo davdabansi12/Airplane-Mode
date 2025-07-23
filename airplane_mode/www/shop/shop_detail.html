@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop Details</title>
+    <link rel="stylesheet" href="/assets/airplane_mode/css/custom_shop.css">
+</head>
+<body>
+    {% set shop = frappe.get_doc('Airport Shop', frappe.form_dict.shop) %}
+    <h1>{{ shop.shop_name }}</h1>
+    <p><strong>Shop Number:</strong> {{ shop.shop_number }}</p>
+    <p><strong>Area:</strong> {{ shop.area }} sq ft</p>
+    <p><strong>Rent:</strong> ₹{{ shop.rent_amount }}</p>
+
+    <a href="/shop-lead?shop={{ shop.name }}">I'm interested in renting</a>
+</body>
+</html>

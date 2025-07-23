@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Shop List</title>
+    <link rel="stylesheet" href="/assets/airplane_mode/css/custom_shop.css">
+</head>
+<body>
+    <h1>Available Shops</h1>
+    <div class="shop-list">
+        {% for shop in frappe.get_all('Airport Shop', fields=['name', 'shop_name', 'shop_number']) %}
+            {% include "airplane_mode/templates/includes/airport_shop_card.html" %}
+        {% endfor %}
+    </div>
+</body>
+</html>
